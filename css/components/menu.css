@@ -1,0 +1,134 @@
+.menu {
+  margin: 10px 10px 0 0;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 10;
+}
+.menu div {
+  width: 45px;
+  height: 1px;
+  background-color: #333;
+  margin-bottom: 10px;
+  transition: all 0.2s ease;
+}
+.menu div:nth-child(2) {
+  width: 40px;
+}
+.menu div:nth-child(3) {
+  width: 35px;
+}
+.menu:hover div {
+  width: 45px !important;
+  transition: all 0.2s ease;
+}
+.menu.active div {
+  width: 30px;
+  margin-top: 10px;
+  background-color: #fff;
+}
+.menu.active div:nth-child(1) {
+  display: none;
+}
+.menu.active div:nth-child(2) {
+  transform: rotate(-45deg);
+}
+.menu.active div:nth-child(3) {
+  transform: rotate(45deg);
+  margin-top: -11px;
+}
+.menu.active:hover div {
+  width: 30px !important;
+}
+.home-navigator {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+  width: 100%;
+}
+.home-navigator a {
+  text-transform: uppercase;
+  color: #333;
+  text-decoration: none;
+  padding: 0 10px 10px 10px;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+.home-navigator a:hover {
+  border-bottom: 2px solid #333;
+  padding: 0 10px 8px 10px;
+}
+.fullWidthMenu {
+  width: 100vw;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  background: rgba(0,0,0,0.998);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+  transition: all 0.2s ease;
+}
+.fullWidthMenu.active {
+  height: 100vh;
+  opacity: 1;
+  transition: all 0.2s ease;
+}
+.fullWidthMenu__pages {
+  margin-bottom: 50px;
+}
+.fullWidthMenu__pages li {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.fullWidthMenu__pages li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.8rem;
+}
+.fullWidthMenu__categories {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  width: 100%;
+}
+.fullWidthMenu__categories p {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 2rem;
+  border-bottom: 1px solid #fff;
+  text-align: center;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+}
+.fullWidthMenu__categories nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.fullWidthMenu__categories nav a {
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: #fff;
+  width: 50%;
+  text-align: center;
+  padding: 10px 0;
+}
+@media screen and (max-width: 700px) {
+  .home-navigator {
+    justify-content: left;
+    flex-direction: column;
+    padding: 15px 10px 0 10px;
+  }
+  .home-navigator a {
+    padding-top: 5px;
+  }
+}
